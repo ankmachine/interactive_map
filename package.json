@@ -7,7 +7,9 @@
   "dependencies": {
     "react": "16.4.2",
     "react-dom": "16.4.2",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "react-tabs": "2.3.0",
+    "react-tether": "1.0.2"
   },
   "devDependencies": {},
   "scripts": {
