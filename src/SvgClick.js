@@ -34,26 +34,26 @@ class Desk extends React.Component {
     console.log(this.props);
     const { person, showDetailOnHover, showDetail, ...rest } = this.props;
     return (
-      <div> hello </div>
-      // <TetherComponent
-      //   attachment="bottom center"
-      //   constraint={[
-      //     {
-      //       to: "scrollParent",
-      //       attachment: "together"
-      //     }
-      //   ]}
-      // >
-      //   <path
-      //     onMouseOver={() => this.setState({ showCard: !this.state.showCard })}
-      //     onMouseOut={() => this.setState({ showCard: !this.state.showCard })}
-      //   />
-      //   {
-      //     <div>
-      //       <Card hover={true} person={person} />
-      //     </div>
-      //   }
-      // </TetherComponent>
+      // <div> hello </div>
+      <TetherComponent
+        attachment="bottom center"
+        constraint={[
+          {
+            to: "scrollParent",
+            attachment: "together"
+          }
+        ]}
+      >
+        <path
+          onMouseOver={() => this.setState({ showCard: !this.state.showCard })}
+          onMouseOut={() => this.setState({ showCard: !this.state.showCard })}
+        />
+        {
+          <div>
+            <Card hover={true} person={person} />
+          </div>
+        }
+      </TetherComponent>
     );
   }
 }
@@ -87,31 +87,24 @@ class SvgClick extends React.Component {
   };
 
   render() {
-    console.log("here");
-    console.log(this.state.crew);
     return (
       <div className="map-wrapper">
         <BlrMap>
-          {seats.map(
-            (seat, i) => (
-              console.log(seat),
-              (
-                <Desk
-                  key={i}
-                  d={seat.d}
-                  id={seat.id}
-                  person={this.state.crew.find(
-                    person => person.sg_seat_ === seat.id
-                  )}
-                  showDetail={this.state.crewFiltered.some(
-                    crew => crew.sg_seat_ === seat.id
-                  )}
-                  showDetailOnHover="true"
-                />
-                // <div>hello</div>
-              )
-            )
-          )}
+          {seats.map((seat, i) => (
+            <Desk
+              key={i}
+              d={seat.d}
+              id={seat.id}
+              person={this.state.crew.find(
+                person => person.sg_seat_ === seat.id
+              )}
+              showDetail={this.state.crewFiltered.some(
+                crew => crew.sg_seat_ === seat.id
+              )}
+              showDetailOnHover="true"
+            />
+            // <div>hello</div>
+          ))}
         </BlrMap>
       </div>
     );
