@@ -12,6 +12,7 @@ const BlrMap = props => (
       <path d="m 138.166,19.362 h 11 V 26 H 138.75 z" />
       <path d="m 158.75,19.362738 h 10.58334 V 25.97732 H 158.75 z" />
     </g>
+    <g>{props.children}</g>
   </svg>
 );
 
