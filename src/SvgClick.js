@@ -7,7 +7,7 @@ import TetherComponent from "react-tether";
 const Card = props => (
   <div>
     <h3>{props.person.name}</h3>
-    <h1> working </h1>
+    <h3>{props.id}</h3>
   </div>
 );
 class Desk extends React.Component {
@@ -39,7 +39,7 @@ class Desk extends React.Component {
         />
         {this.state.showCard ? (
           <div>
-            <Card hover={true} person={person} />
+            <Card hover={true} person={person} id={this.props.id} />
           </div>
         ) : null}
       </TetherComponent>
@@ -87,13 +87,6 @@ class SvgClick extends React.Component {
               person={this.state.crew.find(
                 person => person.sg_seat_ === seat.id
               )}
-              // person={{
-              //   name: "ankit",
-              //   sg_seat_: "blr - 144 - lin"
-              // }}
-              // showDetail={this.state.crewFiltered.some(
-              //   crew => crew.sg_seat_ === seat.id
-              // )}
               showDetail={true}
               showDetailOnHover={true}
             />
