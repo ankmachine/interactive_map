@@ -18,20 +18,9 @@ class Avatar extends React.Component {
         <div style={{ position: "absolute" }}>
           <svg
             style={{ width: "100%", height: "100%" }}
-            viewBox="0 0 600 600"
+            viewBox="0 0 900 900"
             preserveAspectRatio="xMinYMin meet"
-          >
-            <text
-              x="300"
-              y="300"
-              alignmentBaseline="central"
-              textAnchor="middle"
-              fill="rgba(0,255,0,0.2)"
-              font-size="2em"
-            >
-              {this.props.person.name}
-            </text>
-          </svg>
+          />
         </div>
       </div>
     );
@@ -39,7 +28,7 @@ class Avatar extends React.Component {
 }
 
 const Card = props => (
-  <div>
+  <div className={`card ${props.hover ? "hover" : ""}`}>
     <Avatar person={props.person} />
     <h3>{props.person.name}</h3>
   </div>

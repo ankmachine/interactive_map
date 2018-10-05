@@ -2,3 +2,19 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.card {
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.card.hover {
+  color: white;
+  background-color: black;
+  box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.8);
+  width: 12rem;
+}
