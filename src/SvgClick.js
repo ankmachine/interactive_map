@@ -28,7 +28,7 @@ class Avatar extends React.Component {
 }
 
 const Card = props => (
-  <div className={`card ${props.hover ? "hover" : ""}`}>
+  <div>
     <Avatar person={props.person} />
     <h3>{props.person.name}</h3>
   </div>
@@ -87,12 +87,12 @@ class SvgClick extends React.Component {
   fetchData = () => {
     var result = [
       {
-        name: "ankit",
-        sg_seat_: "blr - 144 - lin"
+        name: "user1",
+        sg_seat_: "seat - 001"
       },
       {
-        name: "chandra",
-        sg_seat_: "blr - 006 - lin"
+        name: "user2",
+        sg_seat_: "seat - 002"
       }
     ];
     this.setState({ crew: result });
